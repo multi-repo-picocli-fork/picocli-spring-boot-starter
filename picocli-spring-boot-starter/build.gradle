@@ -41,7 +41,7 @@ moduleConfig {
 ext['junit-jupiter.version'] = "${junit5Version}"
 
 dependencies {
-    api                 rootProject
+    api                 "info.picocli:picocli:$projectVersion"
     if (useJava17) {
         api                 supportDependencies.springbootstarter
         annotationProcessor supportDependencies.springbootannproc

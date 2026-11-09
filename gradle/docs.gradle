@@ -1,6 +1,0 @@
-// Build API documentation from the source present in this repository.
-javadoc {
-    options.encoding = 'UTF-8'
-    options.overview = 'src/main/java/overview.html'
-    dependsOn(jar)
-}
