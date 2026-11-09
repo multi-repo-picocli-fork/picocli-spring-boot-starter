@@ -2,5 +2,10 @@
 if (!JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_17)) {
     throw new GradleException('Use JDK 17 or newer to build this repository.')
 }
-rootProject.name = 'picocli'
+rootProject.name = 'picocli-spring-boot-starter'
 include 'picocli-spring-boot-starter'
+
+// picocli core is the separate picocli-core repository. Gradle builds it from
+// source and substitutes it for info.picocli:picocli. The default location is
+// a sibling checkout; override it with -PpicocliCoreDir=<path>.
+includeBuild(providers.gradleProperty('picocliCoreDir').getOrElse('../picocli-core'))

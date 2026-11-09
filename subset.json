@@ -3,16 +3,11 @@
   "fork": "https://github.com/iliabardson/picocli",
   "upstream_commit": "10509c0af89aa3254ca14ba90d9b3b7168e57994",
   "repository": "iliabardson/picocli-spring-boot-starter",
-  "embedded_core": "src/",
   "modules": [
     "picocli-spring-boot-starter"
   ],
   "retained_paths": [
-    "src/",
-    "docs/",
     "gradle/wrapper/",
-    "gradle/jacoco.gradle",
-    "gradle/docs.gradle",
     "gradle/publish-mavencentral.gradle",
     "build.gradle",
     "settings.gradle",
@@ -20,7 +15,6 @@
     "gradlew",
     "gradlew.bat",
     "LICENSE",
-    "NOTICE-DOCS",
     "README.md",
     "RELEASE-NOTES.md",
     "CONTRIBUTING.md",
@@ -28,11 +22,17 @@
     ".editorconfig",
     ".gitattributes",
     ".gitignore",
-    "bnd.bnd",
-    "logging.properties",
     "picocli-spring-boot-starter/"
   ],
   "verified_java": 17,
   "build_command": "./gradlew clean build --no-daemon",
-  "filter_tool": "git-filter-repo 2.47.0"
+  "filter_tool": "git-filter-repo 2.47.0",
+  "dependencies": {
+    "picocli-core": {
+      "repository": "multi-repo-picocli-fork/picocli-core",
+      "artifact": "info.picocli:picocli",
+      "default_path": "../picocli-core",
+      "gradle_property": "picocliCoreDir"
+    }
+  }
 }
